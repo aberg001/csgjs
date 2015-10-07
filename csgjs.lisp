@@ -12,6 +12,13 @@
 (defun csg-from-polygons (polygons) 
   (new-csg polygons))
 
+(defgeneric clone (self))
+(defgeneric to-polygons (self))
+(defgeneric union (self other))
+(defgeneric subtract (self other))
+(defgeneric intersect (self other))
+
+
 (defmethod clone ((self csg))
   (csg-from-polygons (slot-value self 'polygons)))
 
